@@ -1,6 +1,13 @@
 # Prerequisites
 *.d
 
+# ROSCO specific files
+*.dis
+*.bin
+*.sym
+test
+testfile
+
 # Object files
 *.o
 *.ko
