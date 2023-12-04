@@ -22,8 +22,8 @@
 #endif
 
 
-
-#define DATASIZE 1024*1024
+// Keep to 2Gb or less to avoid blowing up the integer math later
+#define DATASIZE 2*1024*1024
 #define TIMES_TO_WRITE 1
 
 int gettimer() {
