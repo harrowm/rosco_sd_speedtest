@@ -134,9 +134,9 @@ int main() {
     uint32_t t_read = (DATASIZE * TIMES_TO_WRITE * 1000) / getduration(start, end);
     t_read = ((t_read * 1000 / 1024) + 5) / 10;
 #ifdef ROSCO
-    snprintf(buf, 30, "Read speed: %lu.%03lu Kps\n", t_write/1000, t_write%1000);
+    snprintf(buf, 30, "Read speed: %lu.%03lu Kps\n", t_read/1000, t_read%1000);
 #else
-    snprintf(buf, 30, "Read speed: %u.%03u Kps\n", t_write/1000, t_write%1000);
+    snprintf(buf, 30, "Read speed: %u.%03u Kps\n", t_read/1000, t_read%1000);
 #endif
     printf("%s", buf);
     
