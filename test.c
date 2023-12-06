@@ -23,7 +23,9 @@
 
 
 // Keep to 2Gb or less to avoid blowing up the integer math later
-#define DATASIZE 2*1024*1024
+// Of course the stock rosco_m68k only has 1M RAM total .. 
+// But in practice 512K is a good test ..
+#define DATASIZE 512*1024
 #define TIMES_TO_WRITE 1
 
 int gettimer() {
@@ -81,7 +83,7 @@ int main() {
 
     printf("rosco_m68k SD Card speed test\n");
     printf("Data file size used is %dK\n", DATASIZE * TIMES_TO_WRITE / 1024);
-    printf("Expect each test to take about %d seconds\n\n", DATASIZE * TIMES_TO_WRITE / 1024 / 25); // just a guess
+    printf("Expect each test to take about %d seconds\n\n", DATASIZE * TIMES_TO_WRITE / 1024 / 18); // just a rough guess
     start = gettimer();
 
     res = fwrite(dataset, DATASIZE, TIMES_TO_WRITE, fp);
